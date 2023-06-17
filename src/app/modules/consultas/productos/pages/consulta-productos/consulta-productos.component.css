@@ -1,0 +1,33 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.product-name {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.price {
+  color: rgb(232, 61, 61);
+  font-size: 22px;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.text-center {
+  text-align: center;
+}
