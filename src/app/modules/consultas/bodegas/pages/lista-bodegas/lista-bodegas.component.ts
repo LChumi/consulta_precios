@@ -19,11 +19,9 @@ export class ListaBodegasComponent implements OnInit {
   constructor(private bodegaService:BodegaService,private router:Router,private dataSvc:DataService) { }
 
   ngOnInit(): void {
-    this.dataSvc.selectedUser$.subscribe(user => {
-      this.id_usuario=user.usr_codigo;
-      this.id_empresa=user.usr_empresa_def;
-      this.listarBodegas();
-    });
+    this.id_usuario=localStorage.getItem('id_usuario');
+    this.id_empresa=localStorage.getItem('id_empresa');
+    this.listarBodegas()
   }
 
   listarBodegas():void{
@@ -34,7 +32,10 @@ export class ListaBodegasComponent implements OnInit {
 
   id_bod:any
   seleccionarBod(bodega:Bodega):void{
-    this.dataSvc.setBodega(bodega);
+    this.selectedBodega=bodega;
+    this.id_bod=this.selectedBodega.bod_codigo;
+    console.log(this.id_bod)
+    localStorage.setItem('bod_id',String(this.selectedBodega.bod_codigo));
     this.router.navigate(['Consultas/consulta_precios'])
   }
 

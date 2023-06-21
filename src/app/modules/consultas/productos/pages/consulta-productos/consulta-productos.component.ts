@@ -18,10 +18,8 @@ export class ConsultaProductosComponent implements OnInit {
   constructor(private productoServie:ProductosService,private dataSvc:DataService) { }
 
   ngOnInit(): void {
-    this.dataSvc.selectedBodega$.subscribe(bodega =>{
-      this.id_bod=bodega.bod_codigo;
-    })
-    }
+    this.id_bod=localStorage.getItem('bod_id');
+ }
 
 
 

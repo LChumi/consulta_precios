@@ -7,12 +7,14 @@ import { ConsultaProductosComponent } from './productos/pages/consulta-productos
 import { ListaBodegasComponent } from './bodegas/pages/lista-bodegas/lista-bodegas.component';
 
 import { FormsModule } from '@angular/forms';
+import { ImagenRotaDirective } from 'src/app/directives/imagen-rota.directive';
 
 
 @NgModule({
   declarations: [
     ListaBodegasComponent,
-    ConsultaProductosComponent
+    ConsultaProductosComponent,
+    ImagenRotaDirective
   ],
   imports: [
     CommonModule,

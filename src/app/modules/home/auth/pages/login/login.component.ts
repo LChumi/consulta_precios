@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/Consultas'])
   }
 
+
   login() {
     if (this.loginForm.valid) {
       const username = this.loginForm.controls.username.value;
@@ -52,7 +53,11 @@ export class LoginComponent implements OnInit {
       this.userService.login(username, password).subscribe(
         data => {
           if (data != null) {
-           this.dataSvc.setUser(data);
+            localStorage.setItem('id_usuario', String(data.usr_codigo));
+            localStorage.setItem('id_empresa',String(data.usr_empresa_def));
+            localStorage.setItem('username',String(data.usr_id));
+            localStorage.setItem('isLoggedIn', 'true');
+            this.userService.setIsLoggedIn(true);
             this.loginForm.reset();
             this.goToConsultas();
           } else {
